@@ -1,0 +1,20 @@
+name: Info do Push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🕒 Mostrar data e hora do push
+        run: |
+          echo "Data e hora do push: $(date)"
+
+      - name: Mostrar usuário do push
+        run: |
+          echo "Usuário: ${{ github.actor }}"
