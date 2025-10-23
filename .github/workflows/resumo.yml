@@ -21,9 +21,9 @@ jobs:
 
       - name: Mesmo de cima (sem sequência)
         run: |
-          echo "Data: $(TZ='America/Sao_Paulo' date)"
+          export TZ=America/Sao_Paulo
+          echo "Data: $(date '+%d/%m/%Y %H:%M:%S')"
           echo "Usuário: ${{ github.actor }}"
           echo "HTML: $(find . -name '*.html' | wc -l)"
           echo "CSS: $(find . -name '*.css' | wc -l)"
           echo "JS: $(find . -name '*.js' | wc -l)"
-
