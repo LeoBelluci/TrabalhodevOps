@@ -8,10 +8,10 @@ jobs:
   resumo:
     runs-on: ubuntu-latest
     steps:
-      - name: ✅ Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 📜 Sequência
+      - name: Sequência
         run: |
           echo "Data: $(date)"
           echo "Usuário: ${{ github.actor }}"
