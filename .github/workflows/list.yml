@@ -1,0 +1,22 @@
+name: Arquivos
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  arquivos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Listar arquivos
+        run: ls -lh
+
+      - name: Contar arquivos HTML
+        run: |
+            echo "Total de arquivos HTML: $(find . -name '*.html' | wc -l)"
+
+      - name: Criar arquivo de texto
+        run: echo "Trabalho de GitHub Actions listando arquivos com sucesso!" > extra_readme.txt
