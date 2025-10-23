@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ✅ Checkout do código
+      - name: Checkout do código
         uses: actions/checkout@v4
 
       - name: Mostrar data e hora do push (Horário do Brasil)
