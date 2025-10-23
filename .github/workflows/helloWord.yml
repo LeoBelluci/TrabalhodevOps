@@ -13,3 +13,7 @@ jobs:
 
       - name: Hello World
         run: echo "Hello World!"
+
+      - name: Criar/atualizar txt
+        run: |
+          echo "Hello word" > helloWord.txt
