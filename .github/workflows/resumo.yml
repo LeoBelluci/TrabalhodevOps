@@ -1,0 +1,29 @@
+name: Resumo de Arquivos
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  resumo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v4
+
+      - name: 📜 Sequência
+        run: |
+          echo "Data: $(date)"
+          echo "Usuário: ${{ github.actor }}"
+          echo "HTML: $(find . -name '*.html' | wc -l)"
+          echo "CSS: $(find . -name '*.css' | wc -l)"
+          echo "JS: $(find . -name '*.js' | wc -l)"
+
+      - name: Mesmo de cima (sem sequência)
+        run: |
+          echo "Data: $(TZ='America/Sao_Paulo' date)"
+          echo "Usuário: ${{ github.actor }}"
+          echo "HTML: $(find . -name '*.html' | wc -l)"
+          echo "CSS: $(find . -name '*.css' | wc -l)"
+          echo "JS: $(find . -name '*.js' | wc -l)"
+
