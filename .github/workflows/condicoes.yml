@@ -15,7 +15,7 @@ jobs:
         id: time
         run: echo "hour=$(date +%H)" >> $GITHUB_OUTPUT
 
-      - name: Rodar apenas à noite
+      - name: Rodar apenas meia noite
         if: ${{ contains('18,19,20,21,22,23,00,01,02,03,04,05,06', steps.time.outputs.hour) }}
         run: echo "Executando porque é noite!"
 
